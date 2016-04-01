@@ -1,0 +1,19 @@
+* INSTALATION
+1. Try to use the "run.bat". If doesn't work you have to go to 2.
+2. Try to use the "compile.bat" then try to use the "run.bat".
+   If doesn't work you have to compile manually.
+** Requirements
+- For running the "run.bat" files you need java installed in your system.
+  Also you need a Windows system.
+- For running the "compile.bat" you need the GCC compiler. If you another C
+  compiler you have to compile manually.
+* Code and compilation
+- The code are strucuture in this way:
+  1. The java code is just a swing frame which executes the C code.
+  2. The C code has to be compile first and has the calculation code.
+  3. The C compiledprogram has to be in a Folder called C, and its must be rio.exe.
+     That will be in the directory where you call the jar program.
+     Look at my run.bat. If you use it, the directory is where the run.bat is.
+     So the C folder (with the rio.exe) has to be near run.bat.
+* For more help ask me
+- Email: franterminator@hotmail.com
