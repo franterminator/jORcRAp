@@ -55,11 +55,28 @@ int crout (size_t alto, size_t ancho, real A[alto][ancho]) {
 
 int main (int argc, char* argv[]) {
   printf("\n Crout descomposition in C\n");
+  // a test
+  real A[4][4];
+  A[0][0] = 1;
+  A[0][1] = -0.6875;
+  A[0][2] = 0;
+  A[1][0] = -0.3125;
+  A[1][1] = 1;
+  A[1][2] = -0.6875;
+  A[2][0] = 0;
+  A[2][1] = -0.3125;
+  A[2][2] = 1;
+
+  printf("\nMatrix A:");
+  printMatrix(A);
+  printf("\nDecomposited matrix:");
+  printMatrix(A);
 
 }
 
 void printMatrix (size_t alto, size_t ancho, real A[alto][ancho]) {
   int i,j;
+  printf("\n");
   for(i=0;i<alto;i++) {
     for(j=0;j<ancho;j++) 
       printf("%.5f ",A[i][j]);
