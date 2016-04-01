@@ -24,27 +24,8 @@
 | 0 |  0 |  1 | 36 |
 | 0 |  0 |  0 |  1 |
 ** Which is the algorithm
-  l{0,0} = 1 \\
-  u{0,0} = 1 \\
-  d{0} = 1 
- 
-  loop1:: from k = 2 to k = n-1 -> \\
-    loop2:: from i = 1 to i = k-1 -> \\
-      sum3:: from j = 1 to j = i-1 of  l{i,j} * u{j,k} \\
-      u{i,k} = (A{i,k} - sum3)/d{i} \\
-    ::end of loop2 
-
-    loop2:: from i = 1 to i = k-1 -> \\
-      sum3:: from j = 1 to j = i-1 of  u{j,i} * l{k,j} \\
-      l{k,i} = (A{k,i} - sum3)/d{i} \\
-    ::end of loop2 
-    
-    l{k,k} = 1 \\
-    u{k,k} = 1 
-    
-    sum4:: from j = 1 to j = k-1 of l{k,j} * d{j} * u{j,k}; \\
-    d{k} = A{k,k} - sum4; 
-  ::end of loop1
+[[./img/algorithm.jpg]]
+- The do ->/code/-> enddo are loops in fortran.
 - *BECAREFUL THE START AND END OF LOOP ARE INCLUDE IN THE COUNT OF THE LOOP*
   It is not like C. It is the mathematical algorithm.
 ** Why I want to use it
