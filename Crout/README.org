@@ -1,0 +1,54 @@
+* Crouting is simple
+** WTF? Is that folder
+- In this folder I have a programs in differents languages
+  for solving a crout decomposition.
+** What is a Crout Decomposition?
+- It is the way of separate a matrix in other three matrix: L , D and U.
+- So the a matrix called A = L * D * U
+*** L matrix
+- It is a subdiagonal matrix. Like the below one.
+ |  1 |  0 |  0 | 0 |
+ | 12 |  1 |  0 | 0 |
+ | 25 | 41 |  1 | 0 |
+ | 63 | 25 | 14 | 1 |
+*** D matrix
+- It is a diagonal matrix. Like the below one.
+| 25 |  0 |  0 |  0 |
+|  0 | 85 |  0 |  0 |
+|  0 |  0 | 41 |  0 |
+|  0 |  0 |  0 | 14 |
+*** U matrix
+- It is a upperdiagonal matrix. Like the below one.
+| 1 | 25 | 85 | 96 |
+| 0 |  1 | 47 | 58 |
+| 0 |  0 |  1 | 36 |
+| 0 |  0 |  0 |  1 |
+** Which is the algorithm
+  l{0,0} = 1
+  u{0,0} = 1
+  d{0} = 1
+ 
+  loop1:: from k = 2 to k = n-1 ->
+    loop2:: from i = 1 to i = k-1 ->
+      sum3:: from j = 1 to j = i-1 of  l{i,j} * u{j,k}
+      u{i,k} = (A{i,k} - sum3)/d{i}
+    ::end of loop2
+
+    loop2:: from i = 1 to i = k-1 ->
+      sum3:: from j = 1 to j = i-1 of  u{j,i} * l{k,j}
+      l{k,i} = (A{k,i} - sum3)/d{i}
+    ::end of loop2
+    
+    l{k,k} = 1
+    u{k,k} = 1
+    
+    sum4:: from j = 1 to j = k-1 of l{k,j} * d{j} * u{j,k};
+    d{k} = A{k,k} - sum4;
+  ::end of loop1
+- *BECAREFUL THE START AND END OF LOOP ARE INCLUDE IN THE COUNT OF THE LOOP*
+  It is not like C. It is the mathematical algorithm.
+** Why I want to use it
+- It makes easier solving matrix system.
+** When I can use it
+- You can use it always in Positive-definite matrix.
+- In other cases depends.
